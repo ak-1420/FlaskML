@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop prediction</title>
+    <link rel="stylesheet" href="static/styles/ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--Favicon -->
+    <link rel="icon" type="image/png" href="/static/images/cr1.jpg"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+</head>
+<body style="background: url('static/images/abhishek-babaria-LKF-Lz9-NZk-unsplash.jpg') fixed center;">
+
+    <div class="container">
+            <div class="row" id="r1">
+            <div class="mx-auto" >
+                <h1 class="text-warning">Crop Guidance and Farmer's Friend</h1>
+              </div>
+            </div>
+            <form action="/predict">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                     <div class="col-sm-8">  
+                        <div class="form-group">
+                            <label class="text-warning" for="temperature">Temperature:</label>
+                            <input required type="text" class="form-control" id="temperature" placeholder="Enter Temperature" name="temperature">
+                          </div>
+                          <div class="form-group">
+                            <label class="text-warning" for="humidity">Humidity:</label>
+                            <input required type="text" class="form-control" id="humidity" placeholder="Enter Humidity" name="humidity">
+                          </div>
+                          <div class="form-group">
+                            <label class="text-warning" for="rainfall">Rainfall:</label>
+                            <input required type="text" class="form-control" id="rainfall" placeholder="Enter rainfall" name="rainfall">
+                          </div>
+                          <div class="form-group">
+                            <label class="text-warning" for="ph">soil pH:</label>
+                            <input required type="text" class="form-control" id="ph" placeholder="Enter soil pH" name="ph">
+                          </div>
+                     </div> 
+                </div>
+                <div class="row mt-5" style="margin-bottom: 20px;">
+                    <div class="col-sm-4"></div>
+                    <button class="btn btn-warning" style="width:250px;" name="btn">submit</button>
+                </div>
+                <label class="text-white "style="margin-left: 10em;font-size:20px"id="pred_crop"> {{pred}}</label>
+            </form>
+    </div>
+</body>
+</html>
